@@ -3,7 +3,7 @@ import { cookieBasedClient } from '@/utils/aplify-utils'
 export default async function Home() {
   const { data: todos } = await cookieBasedClient.models.Todo.list({
     selectionSet: ['content', 'id'],
-    authMode: 'apiKey',
+    authMode: 'userPool',
   })
 
   console.log('todos', todos)

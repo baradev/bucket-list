@@ -19,7 +19,7 @@ export default function NavBar({ isSignedIn }: { isSignedIn: boolean }) {
           break
         case 'signedOut':
           setAuthCheck(false)
-          router.push('/')
+          router.push('/signin')
           break
       }
     })
