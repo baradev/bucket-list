@@ -37,6 +37,7 @@ export default function NavBar({ isSignedIn }: { isSignedIn: boolean }) {
     {
       href: '/',
       label: 'Home',
+      loggedIn: true,
     },
     {
       href: '/add',
