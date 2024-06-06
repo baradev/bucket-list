@@ -12,7 +12,7 @@ Bucket List is a web application built with Next.js and hosted on AWS Amplify. T
 - **Authentication**: User authentication is implemented using Amplify Authentication for secure login and signup.
 - **GraphQL API**: AWS AppSync is used to create a GraphQL API, providing a robust interface for data operations.
 - **DynamoDB Integration**: The application uses DynamoDB for storing bucket list items, allowing for create, read, and delete operations.
-- **S3 Bucket for Image Storage**: Images associated with bucket list items are stored securely in an S3 bucket, ensuring efficient retrieval and management.
+- **S3 Bucket for Image Storage**: Images associated with bucket list items are stored securely in an S3 bucket, ensuring efficient retrieval and management (To Do: Implement).
 
 ![Architecture Diagram](./src/images/ArchitectureDiagram.png)
 
@@ -30,18 +30,6 @@ The backend is powered by AWS services:
 - **AWS AppSync**: Manages the GraphQL API, enabling efficient data queries and mutations.
 - **DynamoDB**: A NoSQL database used to store bucket list items, allowing for quick and scalable data access.
 - **S3 Bucket**: (To Do: Implement) Implementation of an S3 bucket for storing images associated with bucket list items, ensuring efficient storage and retrieval.
-
-### Authentication
-
-Amplify Authentication is used to manage user login and signup functionalities. It ensures secure access to the application.
-
-### GraphQL API
-
-AWS AppSync is utilized to create and manage the GraphQL API. The API schema defines the structure for the bucket list items and operations like create, read, and delete.
-
-### DynamoDB
-
-DynamoDB is used for data storage. It allows for high scalability and performance, handling all CRUD operations for the bucket list items.
 
 ---
 
