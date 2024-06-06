@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bucket List App Project
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Bucket List is a web application built with Next.js and hosted on AWS Amplify. The application allows users to create, read, and delete items from their personal bucket list. The project leverages AWS services such as Amplify for hosting and authentication, AppSync for GraphQL API, and DynamoDB for data storage.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js Application**: Developed using the Next.js framework for a seamless React experience.
+- **AWS Amplify Hosting**: Source code is uploaded and hosted on AWS Amplify for reliable and scalable web hosting.
+- **Infrastructure as Code**: Backend infrastructure is provisioned using TypeScript.
+- **Authentication**: User authentication is implemented using Amplify Authentication for secure login and signup.
+- **GraphQL API**: AWS AppSync is used to create a GraphQL API, providing a robust interface for data operations.
+- **DynamoDB Integration**: The application uses DynamoDB for storing bucket list items, allowing for create, read, and delete operations.
+- **S3 Bucket for Image Storage**: Images associated with bucket list items are stored securely in an S3 bucket, ensuring efficient retrieval and management.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Architecture Diagram](./src/images/ArchitectureDiagram.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Architecture
 
-## Learn More
+### Frontend
 
-To learn more about Next.js, take a look at the following resources:
+The frontend is built using Next.js, a React framework that enables server-side rendering and static site generation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Backend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The backend is powered by AWS services:
 
-## Deploy on Vercel
+- **AWS Amplify**: Handles hosting, authentication, and integration with other AWS services.
+- **AWS AppSync**: Manages the GraphQL API, enabling efficient data queries and mutations.
+- **DynamoDB**: A NoSQL database used to store bucket list items, allowing for quick and scalable data access.
+- **S3 Bucket**: (To Do: Implement) Implementation of an S3 bucket for storing images associated with bucket list items, ensuring efficient storage and retrieval.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Authentication
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Amplify Authentication is used to manage user login and signup functionalities. It ensures secure access to the application.
+
+### GraphQL API
+
+AWS AppSync is utilized to create and manage the GraphQL API. The API schema defines the structure for the bucket list items and operations like create, read, and delete.
+
+### DynamoDB
+
+DynamoDB is used for data storage. It allows for high scalability and performance, handling all CRUD operations for the bucket list items.
+
+---
+
+Thank you for checking out the Bucket List project! I hope you find it useful and engaging.
