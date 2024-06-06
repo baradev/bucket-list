@@ -73,7 +73,7 @@ export default function NavBar({ isSignedIn }: { isSignedIn: boolean }) {
         <Button
           variation="primary"
           borderRadius="2rem"
-          className="mr-4"
+          className="mr-4 hover:bg-teal-800"
           onClick={signOutSignIn}
         >
           {authCheck ? 'Sign Out' : 'Sign In'}

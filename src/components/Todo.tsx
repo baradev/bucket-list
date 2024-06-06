@@ -21,8 +21,8 @@ const Todo = ({
       }`}
     >
       <div className="flex flex-col gap-2">
-        <div className="font-bold text-lg">{todo.content}</div> {/* Title */}
-        <div className="text-sm">{todo.description}</div> {/* Description */}
+        <div className="font-bold text-lg">{todo.content}</div>
+        <div className="text-sm">{todo.description}</div>
       </div>
       <div className="flex items-center">
         <label className="relative inline-flex items-center cursor-pointer">
@@ -32,7 +32,6 @@ const Todo = ({
             onChange={() => onToggleDone(todo.id, !todo.done)}
             className="sr-only peer"
           />
-          {/* Replace the green filled square with a celebratory emoji */}
           {todo.done ? (
             '🎉'
           ) : (
