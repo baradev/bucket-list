@@ -21,13 +21,13 @@ const AddPost = async () => {
           type="text"
           name="todo"
           id="todo"
-          placeholder="Todo"
+          placeholder="Wish"
           className="border border-gray-200 text-gray-900 block p-2 rounded-lg w-3/5"
         />
         <textarea
           name="description"
           id="description"
-          placeholder="Description"
+          placeholder="Details"
           className="border border-gray-200 text-gray-900 block p-2 rounded-lg w-3/5 h-32"
         />
 

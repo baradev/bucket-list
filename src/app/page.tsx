@@ -21,10 +21,14 @@ export default async function Home() {
   return (
     <main className="flex flex-col items-center justify-between p-24 w-1/2 m-auto">
       <h1 className="text-2xl pb-10">Current wishes</h1>
-      {todos?.map((todo, idx) => (
+      {todos?.map((todo) => (
         <Todo
           key={todo.id}
-          todo={todo}
+          todo={{
+            ...todo,
+            done: todo.done ?? false,
+            description: todo.description ?? '',
+          }}
           onDelete={onDelete}
           onToggleDone={onToggleDone}
         />

@@ -4,15 +4,18 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { Schema } from '../../amplify/data/resource'
 
-const Todo = ({
-  todo,
-  onDelete,
-  onToggleDone,
-}: {
-  todo: Pick<Schema['Todo'], 'content' | 'id' | 'done' | 'description'>
+interface TodoProps {
+  todo: {
+    content: string
+    id: string
+    done: boolean
+    description: string
+  }
   onDelete: (id: string) => void
   onToggleDone: (id: string, done: boolean) => void
-}) => {
+}
+
+const Todo: React.FC<TodoProps> = ({ todo, onDelete, onToggleDone }) => {
   const router = useRouter()
   return (
     <div
@@ -33,7 +36,9 @@ const Todo = ({
             className="sr-only peer"
           />
           {todo.done ? (
-            '🎉'
+            <span role="img" aria-label="done">
+              🎉
+            </span>
           ) : (
             <div className="w-6 h-6 bg-gray-200 rounded"></div>
           )}
