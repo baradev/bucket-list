@@ -12,15 +12,15 @@ export default async function Home() {
   }
 
   const { data: todos } = await cookieBasedClient.models.Todo.list({
-    selectionSet: ['content', 'id', 'done'], // Make sure to include 'done' in selectionSet
+    selectionSet: ['content', 'id', 'done', 'description'], // Make sure to include 'done' in selectionSet
     authMode: 'userPool',
   })
 
-  console.log('todos', todos)
+  console.log('todos', 'description', todos)
 
   return (
     <main className="flex flex-col items-center justify-between p-24 w-1/2 m-auto">
-      <h1 className="text-2xl pb-10">List Of All Tasks</h1>
+      <h1 className="text-2xl pb-10">Bucket List</h1>
       {todos?.map((todo, idx) => (
         <Todo
           key={todo.id}

@@ -9,9 +9,9 @@ const Todo = ({
   onDelete,
   onToggleDone,
 }: {
-  todo: Pick<Schema['Todo'], 'content' | 'id' | 'done'>
+  todo: Pick<Schema['Todo'], 'content' | 'id' | 'done' | 'description'>
   onDelete: (id: string) => void
-  onToggleDone: (id: string, done: boolean) => void // Add onToggleDone to the props
+  onToggleDone: (id: string, done: boolean) => void
 }) => {
   const router = useRouter()
   return (
@@ -20,17 +20,22 @@ const Todo = ({
         todo.done ? 'bg-green-100' : 'bg-gray-100'
       }`}
     >
-      <div className="flex gap-2">
-        <div>{todo.content}</div>
+      <div className="flex flex-col gap-2">
+        <div className="font-bold text-lg">{todo.content}</div> {/* Title */}
+        <div className="text-sm">{todo.description}</div> {/* Description */}
       </div>
-      <div>
-        <input
-          type="checkbox"
-          checked={todo.done}
-          onChange={() => onToggleDone(todo.id, !todo.done)} // Call onToggleDone
-        />
+      <div className="flex items-center">
+        <label className="relative inline-flex items-center cursor-pointer">
+          <input
+            type="checkbox"
+            checked={todo.done}
+            onChange={() => onToggleDone(todo.id, !todo.done)}
+            className="sr-only peer"
+          />
+          <div className="w-6 h-6 bg-gray-200 rounded peer-checked:bg-green-500 peer-focus:ring-green-300"></div>
+        </label>
         <button
-          className="text-red-500 cursor-pointer"
+          className="text-red-500 cursor-pointer ml-4"
           onClick={() => onDelete(todo.id)}
         >
           X

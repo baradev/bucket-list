@@ -24,6 +24,7 @@ export async function onToggleDone(id: string, done: boolean) {
 export async function createTodo(formData: FormData) {
   const { data } = await cookieBasedClient.models.Todo.create({
     content: formData.get('todo')?.toString() || '',
+    description: formData.get('description')?.toString() || '',
   })
 
   console.log('create post data', data)
