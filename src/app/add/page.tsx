@@ -22,19 +22,18 @@ const AddPost = async () => {
           name="todo"
           id="todo"
           placeholder="Todo"
-          className="border border-gray-200 text-gray-900 block p-2 rounded-lg"
+          className="border border-gray-200 text-gray-900 block p-2 rounded-lg w-3/5"
         />
-        <input
-          type="text"
+        <textarea
           name="description"
           id="description"
           placeholder="Description"
-          className="border border-gray-200 text-gray-900 block p-2 rounded-lg"
+          className="border border-gray-200 text-gray-900 block p-2 rounded-lg w-3/5 h-32"
         />
         <input type="file" />
 
         <button type="submit" className="text-white bg-teal-600 rounded p-4">
-          Submit
+          Add a wish
         </button>
       </form>
     </div>

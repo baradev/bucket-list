@@ -17,7 +17,7 @@ const Todo = ({
   return (
     <div
       className={`border w-full p-4 rounded flex justify-between ${
-        todo.done ? 'bg-green-100' : 'bg-gray-100'
+        todo.done ? 'bg-teal-100' : 'bg-gray-100'
       }`}
     >
       <div className="flex flex-col gap-2">
@@ -32,10 +32,15 @@ const Todo = ({
             onChange={() => onToggleDone(todo.id, !todo.done)}
             className="sr-only peer"
           />
-          <div className="w-6 h-6 bg-gray-200 rounded peer-checked:bg-green-500 peer-focus:ring-green-300"></div>
+          {/* Replace the green filled square with a celebratory emoji */}
+          {todo.done ? (
+            '🎉'
+          ) : (
+            <div className="w-6 h-6 bg-gray-200 rounded"></div>
+          )}
         </label>
         <button
-          className="text-red-500 cursor-pointer ml-4"
+          className="cursor-pointer ml-4 text-gray-400"
           onClick={() => onDelete(todo.id)}
         >
           X

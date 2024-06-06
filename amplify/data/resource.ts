@@ -4,7 +4,7 @@ const schema = a.schema({
   Todo: a
     .model({
       content: a.string().required(),
-      description: a.string(), // Adding description field
+      description: a.string(),
       done: a.boolean().default(false),
     })
     .authorization((allow) => [allow.owner()]),

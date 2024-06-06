@@ -1,6 +1,6 @@
 import { isAuthenticated, cookieBasedClient } from '@/utils/aplify-utils'
 import Todo from '@/components/Todo'
-import { onDelete, onToggleDone } from './_actions/actions' // Import toggleDone
+import { onDelete, onToggleDone } from './_actions/actions'
 import { redirect } from 'next/navigation'
 
 export default async function Home() {
@@ -12,7 +12,7 @@ export default async function Home() {
   }
 
   const { data: todos } = await cookieBasedClient.models.Todo.list({
-    selectionSet: ['content', 'id', 'done', 'description'], // Make sure to include 'done' in selectionSet
+    selectionSet: ['content', 'id', 'done', 'description'],
     authMode: 'userPool',
   })
 
@@ -20,13 +20,13 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between p-24 w-1/2 m-auto">
-      <h1 className="text-2xl pb-10">Bucket List</h1>
+      <h1 className="text-2xl pb-10">Current wishes</h1>
       {todos?.map((todo, idx) => (
         <Todo
           key={todo.id}
           todo={todo}
           onDelete={onDelete}
-          onToggleDone={onToggleDone} // Pass toggleDone function
+          onToggleDone={onToggleDone}
         />
       ))}
     </main>
