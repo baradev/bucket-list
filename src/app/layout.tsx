@@ -4,6 +4,7 @@ import './globals.css'
 import Auth from '@/components/auth/Auth'
 import NavBar from '@/components/NavBar'
 import { isAuthenticated } from '@/utils/aplify-utils'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,10 +17,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const authenticated = await isAuthenticated()
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar isSignedIn={await isAuthenticated()} />
+        <NavBar isSignedIn={authenticated} />
         <Auth>{children}</Auth>
       </body>
     </html>

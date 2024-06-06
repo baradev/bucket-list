@@ -1,7 +1,16 @@
 import React from 'react'
 import { createTodo } from '@/app/_actions/actions'
+import { redirect } from 'next/navigation'
+import { isAuthenticated } from '@/utils/aplify-utils'
 
-const AddPost = () => {
+const AddPost = async () => {
+  const authenticated = await isAuthenticated()
+
+  if (!authenticated) {
+    redirect('/signin')
+    return null
+  }
+
   return (
     <div>
       <form
