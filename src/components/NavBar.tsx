@@ -50,6 +50,11 @@ export default function NavBar({ isSignedIn }: { isSignedIn: boolean }) {
     (route) => route.loggedIn === authCheck || route.loggedIn === undefined
   )
 
+  // Return null if user is not signed in
+  if (!authCheck) {
+    return null
+  }
+
   return (
     <>
       <Flex
