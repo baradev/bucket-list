@@ -31,6 +31,8 @@ const AddPost = async () => {
           placeholder="Description"
           className="border border-gray-200 text-gray-900 block p-2 rounded-lg"
         />
+        <input type="file" />
+
         <button type="submit" className="text-white bg-teal-600 rounded p-4">
           Submit
         </button>
