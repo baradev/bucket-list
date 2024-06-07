@@ -9,7 +9,7 @@ Bucket List is a web application built with Next.js and hosted on AWS Amplify. T
 - **Next.js Application**: Developed using the Next.js framework for a seamless React experience.
 - **AWS Amplify Hosting**: Source code is uploaded and hosted on AWS Amplify for reliable and scalable web hosting.
 - **Infrastructure as Code**: Backend infrastructure is provisioned using TypeScript.
-- **Authentication**: User authentication is implemented using Amplify Authentication for secure login and signup.
+- **Authentication**: User authentication is implemented using Amplify Authentication (powered by Amazon Cognito) for secure login and signup.
 - **GraphQL API**: AWS AppSync is used to create a GraphQL API, providing a robust interface for data operations.
 - **DynamoDB Integration**: The application uses DynamoDB for storing bucket list items, allowing for create, read, and delete operations.
 - **S3 Bucket for Image Storage**: Images associated with bucket list items are stored securely in an S3 bucket, ensuring efficient retrieval and management (To Do: Implement).
@@ -20,7 +20,7 @@ Bucket List is a web application built with Next.js and hosted on AWS Amplify. T
 
 ### Frontend
 
-The frontend is built using Next.js, a React framework that enables server-side rendering and static site generation.
+The frontend is built using Next.js.
 
 ### Backend
 
